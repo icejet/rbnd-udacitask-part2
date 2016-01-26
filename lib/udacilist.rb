@@ -23,11 +23,11 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+    a = Artii::Base.new(font: 'nancyj-underlined')
+    puts a.asciify(@title)
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
+    puts "\n"
   end
 end
