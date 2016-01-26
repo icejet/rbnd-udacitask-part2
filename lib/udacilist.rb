@@ -1,8 +1,9 @@
 class UdaciList
   attr_reader :title, :items
 
-  def initialize(options={})
-    @title = options[:title]
+  def initialize(options = {})
+    @title = "Untitled List"
+    @title = options[:title] if options[:title]
     @items = []
   end
 

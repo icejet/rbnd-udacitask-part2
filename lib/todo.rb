@@ -4,10 +4,12 @@ class TodoItem
 
   def initialize(description, options = {})
     @description = description
-    @due = options[:due] ? Date.parse(options[:due]) : options[:due]
+    @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]
-    unless %w(low medium high).include?(@priority)
-      raise UdaciListErrors::InvalidPriorityValue, "#{@priority} isn't valid"
+    if @priority
+      unless ['low', 'medium', 'high', '', ' '].include?(@priority)
+        raise UdaciListErrors::InvalidPriorityValue, "#{@priority} isn't valid"
+      end
     end
   end
 
