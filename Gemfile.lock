@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    artii (2.1.1)
+    chronic (0.10.2)
+    colorize (0.7.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  artii
+  chronic
+  colorize
+
+BUNDLED WITH
+   1.11.2
