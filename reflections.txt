@@ -1,13 +1,39 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I chose to use terminal-table and artii.  I chose terminal-table because having
+the items in a table makes it more readable in my opinion.  I chose artii for
+contrast and visual interest.
+
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Undo last delete. This feature lets you undo the most recent delete.
+  We all make mistakes. With this feature there is no need to recreate items
+  deleted by accident.
+
+  b) Note item type.  This feature allows for the saving of simple notes. The
+  notes keep track of the note text and the date it was created.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+I spent around 6 hours working on this.
+
 2. What was the most rewarding challenge you conquered?
+The most rewarding challenge was figuring out ways to reduce repetition. I am
+starting to get a feel for how use the techniques outline in the class
+so far.
+
 3. What two additional features did you build? Why?
+My first feature was undo last delete. The reason I built this is because I can
+imagine myself hitting the wrong number and the keyboard and deleting the wrong
+item on a regular basis. With this I don't have to recreate the item I deleted.
+
+My second feature was a note item type. I built this because I frequently take
+notes about things while looking at my todo list/calendar. If I was to use this
+regularly I'd need a way to keep track of simple notes without faking priorities
+or due dates.
+
 4. Where do you still have room to grow?
+I think I could do well with taking more time to sit plan things better. I had
+several false starts that probably could have been prevented with a little bit
+of forethought.
