@@ -9,7 +9,8 @@ class NoteItem < Item
   end
 
   def details
-    format_description(@description) + "created: " +
-    format_date(:single_date, date: @created)
+    row = []
+    row << format_description(@description)
+    row << "created: " + format_date(:single_date, date: @created)
   end
 end

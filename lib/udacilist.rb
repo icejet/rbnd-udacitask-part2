@@ -7,7 +7,7 @@ class UdaciList
     @items = []
   end
 
-  def add(type, description, options={})
+  def add(type, description, options = {})
     type = type.downcase
     case type
     when "todo" then @items.push TodoItem.new(description, options)
@@ -31,9 +31,14 @@ class UdaciList
   def all
     a = Artii::Base.new(font: 'nancyj-underlined')
     puts a.asciify(@title)
+    rows = []
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      # puts "#{position + 1}) #{item.details}"
+      row = item.details.insert(0, position + 1)
+      rows << row
     end
+    table = Terminal::Table.new rows: rows
+    puts table
     puts "\n"
   end
 

@@ -15,8 +15,8 @@ class TodoItem < Item
   end
 
   def details
-    format_description(@description) + "due: " +
-      format_date(:single_date, date: @due) +
-      format_priority(@priority)
+    row = []
+    row << format_description(@description)
+    row << "due: " + format_date(:single_date, date: @due) + format_priority(@priority)
   end
 end
