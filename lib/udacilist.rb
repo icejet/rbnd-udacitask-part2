@@ -1,5 +1,5 @@
 class UdaciList
-  attr_reader :title, :items
+  attr_reader :title, :items, :last_deleted
 
   def initialize(options = {})
     @title = "Untitled List"
@@ -19,7 +19,12 @@ class UdaciList
 
   def delete(index)
     raise UdaciListErrors::IndexExceedsListSize, "That index doesn't exist" if index > @items.size
-    @items.delete_at(index - 1)
+    @last_deleted = { item: @items.slice!(index - 1), index: index - 1 }
+  end
+
+  def undo_last_delete
+    @items.insert(@last_deleted[:index], @last_deleted[:item]) if last_deleted
+    @last_deleted = nil
   end
 
   def all
