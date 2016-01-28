@@ -29,30 +29,31 @@ class UdaciList
   end
 
   def all
-    a = Artii::Base.new(font: 'nancyj-underlined')
-    puts a.asciify(@title)
-    rows = []
-    @items.each_with_index do |item, position|
-      # puts "#{position + 1}) #{item.details}"
-      row = item.details.insert(0, position + 1)
-      rows << row
-    end
-    table = Terminal::Table.new rows: rows
-    puts table
-    puts "\n"
+    print_table(@title, create_row_array(@items))
   end
 
   def filter(type)
     filtered_list = @items.select { |item| item.type == type }
     puts "No '#{type}' items found" unless filtered_list.size > 0
+    header = "#{@title} - #{type}"
+    print_table(header, create_row_array(filtered_list))
+  end
+
+  private
+
+  def print_table(header, row_array)
     a = Artii::Base.new(font: 'nancyj-underlined')
-    puts a.asciify(@title + " - #{type}")
+    puts a.asciify(header)
+    table = Terminal::Table.new rows: row_array
+    puts table
+  end
+
+  def create_row_array(item_array)
     rows = []
-    filtered_list.each_with_index do |item, position|
+    item_array.each_with_index do |item, position|
       row = item.details.insert(0, position + 1)
       rows << row
     end
-    table = Terminal::Table.new rows: rows
-    puts table
+    rows
   end
 end
