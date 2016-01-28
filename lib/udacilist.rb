@@ -45,6 +45,14 @@ class UdaciList
   def filter(type)
     filtered_list = @items.select { |item| item.type == type }
     puts "No '#{type}' items found" unless filtered_list.size > 0
-    puts filtered_list
+    a = Artii::Base.new(font: 'nancyj-underlined')
+    puts a.asciify(@title + " - #{type}")
+    rows = []
+    filtered_list.each_with_index do |item, position|
+      row = item.details.insert(0, position + 1)
+      rows << row
+    end
+    table = Terminal::Table.new rows: rows
+    puts table
   end
 end
