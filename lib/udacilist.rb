@@ -30,4 +30,10 @@ class UdaciList
     end
     puts "\n"
   end
+
+  def filter(type)
+    filtered_list = @items.select { |item| item.type == type }
+    puts "No '#{type}' items found" unless filtered_list.size > 0
+    puts filtered_list
+  end
 end
