@@ -13,6 +13,7 @@ class UdaciList
     when "todo" then @items.push TodoItem.new(description, options)
     when "event" then @items.push EventItem.new(description, options)
     when "link" then @items.push LinkItem.new(description, options)
+    when "note" then @items.push NoteItem.new(description)
     else raise UdaciListErrors::InvalidItemType, "#{type} isn't recognized"
     end
   end

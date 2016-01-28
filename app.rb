@@ -11,6 +11,7 @@ require_relative "lib/udacilist"
 require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
+require_relative "lib/note"
 
 list = UdaciList.new(title: "Julia's Stuff")
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
@@ -47,4 +48,14 @@ new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-new_list.filter("dog")
+new_list.filter("link")
+
+# DEMO UNDO LAST DELETE FEATURE
+new_list.delete(1)
+new_list.all
+new_list.undo_last_delete
+new_list.all
+
+# DEMO NOTE ITEM TYPE
+new_list.add("note", "Remember the Alamo")
+new_list.all

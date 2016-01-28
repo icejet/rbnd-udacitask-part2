@@ -5,7 +5,7 @@ module Listable
 
   def format_date(type, options = {})
     if type == :single_date
-      return options[:due] ? options[:due].strftime("%D") : "No due date"
+      return options[:date] ? options[:date].strftime("%D") : "No due date"
     end
     if type == :dual_dates
       dates = options[:start_date].strftime("%D") if options[:start_date]
