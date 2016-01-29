@@ -47,6 +47,11 @@ new_list.add("link", "http://ruby-doc.org")
 # ---------------------
 new_list.all
 
+# DISPLAY ITEM TYPE
+puts new_list.items[1].type
+puts new_list.items[4].type
+puts new_list.items[6].type
+
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("link")
